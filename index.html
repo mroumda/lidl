@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirection par Liste Déroulante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('Arriere-plan.png') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        select {
+            padding: 15px;
+            font-size: 1.5em;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+    <script type="text/javascript">
+        function redirectToLink() {
+            var select = document.getElementById("addressSelect");
+            var selectedValue = select.options[select.selectedIndex].value;
+            if (selectedValue) {
+                window.location.href = selectedValue;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Choisissez un magasin</h1>
+    <select id="addressSelect" onchange="redirectToLink()">
+        <option value="">--Sélectionnez un magasin--</option>
+        <option value="https://cdn2.me-qr.com/pdf/62e7cdf4-a2fd-48e7-94ca-af97e2830ce5.pdf">3837 - Longpont Sur Orge</option>
+        <option value="https://cdn2.me-qr.com/pdf/96a73b55-f663-4f30-ad6f-5ee6a560a545.pdf">2308 - Ingré</option>
+        <option value="https://cdn.me-qr.com/pdf/3b9e8a7f-f847-4c76-a3dd-2c6f675a2d16.pdf">3409 - L'Hay Les Roses</option>
+		<option value="https://cdn2.me-qr.com/pdf/952af8e0-5e19-4e4f-8b9c-e13646e3ad9e.pdf">1010 - Fleury les Aubrais</option>
+    </select>
+</body>
+</html>
